@@ -1,0 +1,13 @@
+include LICENSE README.md SECURITY.md CONTRIBUTING.md CHANGELOG.md CITATION.cff
+include .env.example .gitignore .gitattributes release_manifest.json
+include requirements-core.lock
+recursive-include src *.py *.json *.txt
+recursive-include tests *.py *.json
+recursive-include configs *.yaml
+recursive-include data *.json *.csv
+recursive-include examples *.json
+recursive-include docs *.md *.json
+recursive-include tools *.py
+recursive-include .github *.yml
+include .githooks/pre-commit
+global-exclude *.pyc *.pyo

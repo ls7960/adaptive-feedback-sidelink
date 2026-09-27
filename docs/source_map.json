@@ -1,0 +1,403 @@
+{
+  "release": "0.1.0",
+  "source_policy": "Original content hashes are retained; private workspace paths and draft identifiers are omitted.",
+  "copied_files": [
+    {
+      "destination": "src/adaptive_feedback_llm/models/__init__.py",
+      "source_sha256": "7971caccb65f4081df18cdfca9ea75dc854bceccad75533fa3409e58eaa773ae",
+      "release_sha256_lf": "7971caccb65f4081df18cdfca9ea75dc854bceccad75533fa3409e58eaa773ae",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/models/domain.py",
+      "source_sha256": "832f5d6d2070ebee1ae506779adae3b3e391d3b5a4372de11e7cd9f98d9879a6",
+      "release_sha256_lf": "7550f1dc3c2def72bafafbfd1e0e9ee84773069b66d5ada14e02724ba69bd8ed",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/models/llm.py",
+      "source_sha256": "6b2af70af6d441f8ad9d517caefb468b5bdfb219948fc2e2059c2d9f5efea8c5",
+      "release_sha256_lf": "6b2af70af6d441f8ad9d517caefb468b5bdfb219948fc2e2059c2d9f5efea8c5",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/models/results.py",
+      "source_sha256": "98f08846ee720f5b5b11061346871695e15ef896bf706e112d288b75c8a65086",
+      "release_sha256_lf": "2af46e2951d83e9c4148aa6c4e582c53de88aa9cf8587e35cb147431ce4f6067",
+      "change": "scientific contents unchanged; LF line endings; terminal blank lines normalized"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/models/serialization.py",
+      "source_sha256": "7fa6cb5a3133e95fc0ec0b96d628783957871dd4ed1f423b5a7dd5bf6ded7663",
+      "release_sha256_lf": "7fa6cb5a3133e95fc0ec0b96d628783957871dd4ed1f423b5a7dd5bf6ded7663",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/physics/__init__.py",
+      "source_sha256": "e0971245770a0eb94017392b24898cec2e109697242ec87f4d86d69e82cdcff6",
+      "release_sha256_lf": "e0971245770a0eb94017392b24898cec2e109697242ec87f4d86d69e82cdcff6",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/physics/core.py",
+      "source_sha256": "203ca2dd032b857124c86403df6fd72209f5072b357d85a7e66e6f256f30d9a8",
+      "release_sha256_lf": "203ca2dd032b857124c86403df6fd72209f5072b357d85a7e66e6f256f30d9a8",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/paths/__init__.py",
+      "source_sha256": "b68e061eb77ae9b7c9b14c4bb81e4b459cf3c1be3c6a72eebdcba6d8cda5065b",
+      "release_sha256_lf": "b68e061eb77ae9b7c9b14c4bb81e4b459cf3c1be3c6a72eebdcba6d8cda5065b",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/paths/catalog.py",
+      "source_sha256": "2e4c13abda62caf6a2d7f216f56b050a34ff36a4ec5b5f917e1361662fd2a5b2",
+      "release_sha256_lf": "a822ac8c541c82e67764f00a07a69bd5e1bcc5f45a5b06d52855592b701ab09d",
+      "change": "scientific contents unchanged; LF line endings; terminal blank lines normalized"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/guidance/__init__.py",
+      "source_sha256": "87bf7e2329b0c24f8c775aeaf1a8de4a652265bb95b937529995c1275a1511bb",
+      "release_sha256_lf": "87bf7e2329b0c24f8c775aeaf1a8de4a652265bb95b937529995c1275a1511bb",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/guidance/static.py",
+      "source_sha256": "9cdde337be1ba6ed9017b9ccbec50cbe23e8302a9050a053f9c60c0b7396f3be",
+      "release_sha256_lf": "9cdde337be1ba6ed9017b9ccbec50cbe23e8302a9050a053f9c60c0b7396f3be",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/evaluator/__init__.py",
+      "source_sha256": "06eb551f9d0544ecd2b8aa76ad6cd286ed88f944661ae9dd7ce2f511c4e9b574",
+      "release_sha256_lf": "06eb551f9d0544ecd2b8aa76ad6cd286ed88f944661ae9dd7ce2f511c4e9b574",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/evaluator/core.py",
+      "source_sha256": "35b6d1c33ced6a29bfb2dd2fd2deb404b7edc832ba1ac5d83dce3c31492ae19a",
+      "release_sha256_lf": "35b6d1c33ced6a29bfb2dd2fd2deb404b7edc832ba1ac5d83dce3c31492ae19a",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/__init__.py",
+      "source_sha256": "e1fd00f790af47c463a2a081eccf62a7e062367b8eb4da7b1dff50dd5ba98c19",
+      "release_sha256_lf": "e1fd00f790af47c463a2a081eccf62a7e062367b8eb4da7b1dff50dd5ba98c19",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/common.py",
+      "source_sha256": "1cb6d1917cc22e6132c7228a2c8bc3ceb17710470265ea57440594cbafa044fb",
+      "release_sha256_lf": "e1491ec87145c265976a639b5aa76f8a11016f2f02bbdde1ac3a412107440154",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/genetic_algorithm/__init__.py",
+      "source_sha256": "f1077d6f547b4ba80e8e352d9c84374e9b5305c9cc44fda97bab480c7c84eab7",
+      "release_sha256_lf": "f1077d6f547b4ba80e8e352d9c84374e9b5305c9cc44fda97bab480c7c84eab7",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/genetic_algorithm/core.py",
+      "source_sha256": "32a82c95bf29c443c2d61dba8b76ce22ddcbe6bbd5ba5707b7adcfe4bc83ac04",
+      "release_sha256_lf": "b7ab36c0e3a724f3739f7ddc11939fd3b409043357cf2dcec0dae6479c5f74f3",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/heuristics/__init__.py",
+      "source_sha256": "2479da6c5e80d8c169b156773e2ea8bbea2762f7b2717a2016daa59e0316a0d5",
+      "release_sha256_lf": "2479da6c5e80d8c169b156773e2ea8bbea2762f7b2717a2016daa59e0316a0d5",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/heuristics/core.py",
+      "source_sha256": "fbb991d8ce8e2d723fcdb60b67cadd89b3dec91f1c0e7c8ea024aabc6c8f0410",
+      "release_sha256_lf": "7bd871da887e38386782d25a83f889815787fc2fa5737eba4c2fcae652bc4fe7",
+      "change": "scientific contents unchanged; LF line endings; terminal blank lines normalized"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/llm/__init__.py",
+      "source_sha256": "efe6c2140583865ad514cdc685ce5008f53acea1320145e76c0628ba80ea89d9",
+      "release_sha256_lf": "15d891abd593861a668c2d52ebf8c388ec583b129fafc50ed6aeb310275f16a0",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/llm/projection.py",
+      "source_sha256": "4eae5519a962eec5fa7eb81cfc362f1d762d73392ab67d9f46ae51f0b3229d79",
+      "release_sha256_lf": "4eae5519a962eec5fa7eb81cfc362f1d762d73392ab67d9f46ae51f0b3229d79",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/llm/provider.py",
+      "source_sha256": "0485a61286c8c3873fb2a7e7d059b266fbbcedba2c8ce0eb51942fbd75d267f5",
+      "release_sha256_lf": "b55cbcec490ebe22c21f98f89ce3459bd6d329479e5d7c2d27a22cad440bd85d",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/llm/runner.py",
+      "source_sha256": "0d225cc50700fc86445e356b3da9215c9e1e4270d8f5ca982c9fda24fd962439",
+      "release_sha256_lf": "cfac183e414b34097f58d11edcfecd40f4207d8834573a721f3509512b0a12c2",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/llm/telemetry.py",
+      "source_sha256": "69994ed6734b4d080ee1a766f86c1fec94c9c5dabe8d440ba276f6053aa50095",
+      "release_sha256_lf": "69994ed6734b4d080ee1a766f86c1fec94c9c5dabe8d440ba276f6053aa50095",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/solvers/results.py",
+      "source_sha256": "9e694a6f58ac74a41efd4d8212736e3972d93b40a2f94c15eb0cfdc8a0337684",
+      "release_sha256_lf": "0daeca404a99f6401b7afee75e5bb8669492be16a6c97320285975d33707769d",
+      "change": "scientific contents unchanged; LF line endings; terminal blank lines normalized"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/prompts/__init__.py",
+      "source_sha256": "881f1360f7948fb53862525c45a066f5f4a18a94539a0436d1787c7fd8d9c363",
+      "release_sha256_lf": "5d416856ba8315b89da1cc7b6d6ffc88d007429a46954a9b2e4c97412286b16c",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/prompts/compact_context.py",
+      "source_sha256": "558ae90d5ece85f85e4a8c5f93858e4c833ec6ff76d2d49a841d2003ca9ca02d",
+      "release_sha256_lf": "e12cb8d84ea260244371215586495e759cadb17e04867545d44e3af1039a4b14",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/prompts/evidence_matrix.py",
+      "source_sha256": "a4276439d038dab7130231bcaeb2023aa8b5363d8570d1f3fab8639bebcd58e3",
+      "release_sha256_lf": "b9f9779d4877ed1d42543790cd6532255556e3a8294eb5d39c28ac40fc467886",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/prompts/global_advisor.py",
+      "source_sha256": "c15250abe1a7fb3b97c0b5113dbf59e86a711760354c7f671a3e6eeb5c86c825",
+      "release_sha256_lf": "0f207582b2d2e041a1de343492393401e182158f72349086d74c4cdb8f3d8a8e",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/prompts/global_advisor.py",
+      "source_sha256": "a92f07966120f480c10f5a47ef5b5ef6b9ada491c9678c57b3276d5d060017ae",
+      "release_sha256_lf": "0f207582b2d2e041a1de343492393401e182158f72349086d74c4cdb8f3d8a8e",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/prompts/instructions.txt",
+      "source_sha256": "e4578f01031bf7da68d429edee737dea0af54aa34d1f52cbc4dc8c547862171a",
+      "release_sha256_lf": "e92825daca3ae72c418e566438e84007153c0b758ac12fbabd6e516afd005c4d",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/prompts/minimal_example.json",
+      "source_sha256": "5f566f043800215941d7912e2f8e9dee4ea2cead33f27a311548612694a2ef8d",
+      "release_sha256_lf": "5f566f043800215941d7912e2f8e9dee4ea2cead33f27a311548612694a2ef8d",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/prompts/opportunities.py",
+      "source_sha256": "3f083f6d3a9fa7f69b9faf2454dcbbc07dd48272186d50828605c23af6e48e25",
+      "release_sha256_lf": "3f083f6d3a9fa7f69b9faf2454dcbbc07dd48272186d50828605c23af6e48e25",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/prompts/schedule_schema.json",
+      "source_sha256": "126ee4bbb22a0677e75ae2d6b3176cad43f312cdb1cea5ad48ba59685ccf9d03",
+      "release_sha256_lf": "126ee4bbb22a0677e75ae2d6b3176cad43f312cdb1cea5ad48ba59685ccf9d03",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/prompts/request_template.txt",
+      "source_sha256": "8add889aab59827e1e9ff5af2d65090f1748ce774ad5432d27894d695d10a6c0",
+      "release_sha256_lf": "8add889aab59827e1e9ff5af2d65090f1748ce774ad5432d27894d695d10a6c0",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/config.py",
+      "source_sha256": "7d59ae82bd127c2b992ee6c185dac62a01cc7226f8f6327b90ab022a08d89b2e",
+      "release_sha256_lf": "d62e638006cc5800f98dcc54a40117f14e8c55fd4350bd736af3687dba5ada66",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/exceptions.py",
+      "source_sha256": "e8b7e96462b82ea581760c32fd9bc61ca02de1ddc7ac81beb9deee525a897129",
+      "release_sha256_lf": "66bece3951e0371e3390eae643f7617ad1707af72f4f99beb7693a1f81cd1c77",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/rl/decoder.py",
+      "source_sha256": "8a7481a9f12040683a43ad957ffece6772972aaa80a92f6e499a0cdea5700382",
+      "release_sha256_lf": "8a7481a9f12040683a43ad957ffece6772972aaa80a92f6e499a0cdea5700382",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/rl/ppo.py",
+      "source_sha256": "f58932666c498e271c48034b01fee452ca57703902818203079ad1bdd5443c54",
+      "release_sha256_lf": "f6d672d283200761160ede27a33df98222b52ad868155a829da1c3c9f677079b",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/rl/full_environment.py",
+      "source_sha256": "ddb01498cedf7d2469dca988919ae6f4fd8b8cc760f05c407dbdfdf69a746880",
+      "release_sha256_lf": "ae27b957133645396b275e3a9bb8e554717c12646f41ac1d31392579d1e15cd5",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/rl/full_policy.py",
+      "source_sha256": "57d733b85718aae69a34e8618a4bca7667fa3a03d7c283b96c4a154c35f339c2",
+      "release_sha256_lf": "33756fbbddbff1f7d096165b003ebf0ced6aadb05ef60138f48ec23aa0390850",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/rl/sparse_environment.py",
+      "source_sha256": "96f45771113dfc29c658c332dfd0615d1c3d2ad49edba80635112d6cdd154d72",
+      "release_sha256_lf": "55d513601e82e271ab34ddf4b3ef421299303625e217ec96cb4d4607be11c177",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "src/adaptive_feedback_llm/rl/sparse_policy.py",
+      "source_sha256": "e4733622278380e476737bf4dade0b0b5cd3732a1cd511104280fbaab88a6b36",
+      "release_sha256_lf": "40ebf563db1c04e68848a50feb30485d1677242977bd94d6520e5769c11fc55c",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/fixtures/basic_all_unserved_schedule.json",
+      "source_sha256": "ae1ab066f5b432fcee0a54f13ae9e467b9692175c272748094bd8fe66d506bc6",
+      "release_sha256_lf": "75329a06c22bb2e57be77567e4fa4101365d1a7d257529e2875df5f2393d9d4f",
+      "change": "scientific contents unchanged; LF line endings; terminal blank lines normalized"
+    },
+    {
+      "destination": "tests/fixtures/basic_scenario.json",
+      "source_sha256": "59bd0b8caeda0fb25714411e806668dc8f0cf2b1b17045c57d8f484c18b91085",
+      "release_sha256_lf": "7f0601ebb6a41f21f5cf0ba7607816102abe939218f1c5937be4b53909af6ffb",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/fixtures/basic_valid_schedule.json",
+      "source_sha256": "121334355cb3a7b2444cead4acfffd9009c5089854a536e61f5c060df2811425",
+      "release_sha256_lf": "7e25f2a15e1a7473f83fa01ae82ffc3cebc0b77c325453b6dfdedd1e8389edc3",
+      "change": "scientific contents unchanged; LF line endings; terminal blank lines normalized"
+    },
+    {
+      "destination": "tests/fixtures/catalog_all_unserved_schedule.json",
+      "source_sha256": "67ec2be36aa7a06e17d28d5a7a4022ab70cd00bebdaae519d60d252628e53941",
+      "release_sha256_lf": "67ec2be36aa7a06e17d28d5a7a4022ab70cd00bebdaae519d60d252628e53941",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "tests/fixtures/catalog_scenario.json",
+      "source_sha256": "8d48495731ee6267084e55d4217c458ab991ddaaac8c9819f595d987dc051f19",
+      "release_sha256_lf": "6321550e2a8104bc5eb341fb5662b580c3785145f9f6747d1328720b027e9313",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/fixtures/catalog_valid_schedule.json",
+      "source_sha256": "83ade25fe6a7711caf2903145dc8b3a08d9040bf934a6254a567135c970bead3",
+      "release_sha256_lf": "83ade25fe6a7711caf2903145dc8b3a08d9040bf934a6254a567135c970bead3",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "tests/conftest.py",
+      "source_sha256": "addb1b2679bd501a59ce879df5106d62d2f136f22a09c9e15ce2c7f1352e253d",
+      "release_sha256_lf": "061686c6d638af49808b82bf70e44312043367ddbcbc41b0ffdd36e4ec3ab84d",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/unit/test_physics.py",
+      "source_sha256": "64ad1e90e0bcdf4ed9a745b5050ed6a8b5cf7c90f8f099ed71ca93194b9ceb11",
+      "release_sha256_lf": "64ad1e90e0bcdf4ed9a745b5050ed6a8b5cf7c90f8f099ed71ca93194b9ceb11",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "tests/unit/test_evaluator.py",
+      "source_sha256": "91f00e6b67a86c9f7a56dd766d64458e99f21e51bf7f7274962f3f4e72742460",
+      "release_sha256_lf": "91f00e6b67a86c9f7a56dd766d64458e99f21e51bf7f7274962f3f4e72742460",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "tests/unit/test_models_and_serialization.py",
+      "source_sha256": "fc6ad9bef7da6eb8f5b64810d5111dff9b67dad9e4677f90a40114aeebd56f77",
+      "release_sha256_lf": "dfec441f27659abe00cdc8e8639221b4b348564f1767e6e948cf40352611864e",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/unit/test_paths_guidance.py",
+      "source_sha256": "574100f2c8f516942d488a92bff156e6afe99732735572cad0fce06449f31995",
+      "release_sha256_lf": "574100f2c8f516942d488a92bff156e6afe99732735572cad0fce06449f31995",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "tests/unit/test_heuristics.py",
+      "source_sha256": "6923ec9f8248f8d4f5a2ca562fc15079ec51ae834781e29c36078d6b2d0f3238",
+      "release_sha256_lf": "6923ec9f8248f8d4f5a2ca562fc15079ec51ae834781e29c36078d6b2d0f3238",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "tests/unit/test_llm_view_prompts.py",
+      "source_sha256": "b8d9f4fde269d9dceb415df7b3ae4507468df8000498a829bd3f21fdd5ca296b",
+      "release_sha256_lf": "e16f8eb0522c2ba41cb46f69f6b47010aecef5e334a1434831a274e7c38297b1",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/unit/test_optimization_facts.py",
+      "source_sha256": "3e5cdee74f0a6dd795f8e92fdd8fe679f9d026c65b20cc148963ff5d3e2d6539",
+      "release_sha256_lf": "249a3e3326dfd2275d63a741c83906e1b887c306b21137b2ab8194a57fd796b2",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/unit/test_compact_context.py",
+      "source_sha256": "216380c4ad45074c07bbf351c5a231ddddd8171fc6da707ad278b6a997d85b1e",
+      "release_sha256_lf": "db286fddc927bb3b3bd2ee76b5fe260b8cd4963c556009b0222b12e289b644c6",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/unit/test_global_advisor.py",
+      "source_sha256": "85b0d706d846b399101a9fc769dff067776914b91dedd57010276f0cde36c2a1",
+      "release_sha256_lf": "d7b746920234f96545a02172903be962bb9f3f5957ce41231c6e51f6ff752975",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/unit/test_global_advisor.py",
+      "source_sha256": "1f1be74910469bc3b23c1fe8900323748c62fe560e4b4032ab647a0adcec20dd",
+      "release_sha256_lf": "d7b746920234f96545a02172903be962bb9f3f5957ce41231c6e51f6ff752975",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/unit/test_evidence_matrix.py",
+      "source_sha256": "b236f17a3c359a2c55c233e6501cff675ed8679f5114d303d5bb84603ce0470c",
+      "release_sha256_lf": "282c40d4a21fc6f848612795e89cb2d8290909d621cd57cf513b2a9e3cfd6008",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "tests/integration/test_genetic_algorithm.py",
+      "source_sha256": "adf61aed8cba99734a7ed26f1475701e0c617bae81897e7701389426ac262e08",
+      "release_sha256_lf": "adf61aed8cba99734a7ed26f1475701e0c617bae81897e7701389426ac262e08",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "tests/integration/test_adaptive_llm.py",
+      "source_sha256": "0de3ade87b8dda9d370a9d003867f2774abc32708653f8241d36f2960767e450",
+      "release_sha256_lf": "fb5192d4426f97e9c3bab481559b768c355df33b6939c673c8a15d7abc75ec17",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "data/published/iteration120.csv",
+      "source_sha256": "57c3fd005eb9d22c56d2827fa0c87c15cdc39965bac23355c6157be137de4c3b",
+      "release_sha256_lf": "e3990b16989b9e7e146b974f7caf4747105b3e29114285926a8d6f9005fa58f6",
+      "change": "scientific contents unchanged; LF line endings"
+    },
+    {
+      "destination": "examples/scenario.json",
+      "source_sha256": "8d48495731ee6267084e55d4217c458ab991ddaaac8c9819f595d987dc051f19",
+      "release_sha256_lf": "6321550e2a8104bc5eb341fb5662b580c3785145f9f6747d1328720b027e9313",
+      "change": "Public naming and configuration/API cleanup; original source content retained separately."
+    },
+    {
+      "destination": "examples/schedule.json",
+      "source_sha256": "83ade25fe6a7711caf2903145dc8b3a08d9040bf934a6254a567135c970bead3",
+      "release_sha256_lf": "83ade25fe6a7711caf2903145dc8b3a08d9040bf934a6254a567135c970bead3",
+      "change": "scientific contents unchanged; LF line endings"
+    }
+  ],
+  "original_files_rechecked_unchanged": 66
+}

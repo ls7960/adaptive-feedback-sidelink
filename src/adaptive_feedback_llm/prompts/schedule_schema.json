@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "adaptive-feedback-llm/schedule/1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["flows"],
+  "properties": {
+    "flows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["flow_id", "served", "path_id", "sru_allocations"],
+        "properties": {
+          "flow_id": {"type": "integer", "minimum": 0},
+          "served": {"type": "boolean"},
+          "path_id": {"type": "integer", "minimum": -1},
+          "sru_allocations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["src", "dst", "num_srus"],
+              "properties": {
+                "src": {"type": "integer", "minimum": 0},
+                "dst": {"type": "integer", "minimum": 0},
+                "num_srus": {"type": "integer", "minimum": 1}
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"served": {"const": false}}, "required": ["served"]},
+            "then": {
+              "properties": {
+                "path_id": {"const": -1},
+                "sru_allocations": {"maxItems": 0}
+              }
+            }
+          },
+          {
+            "if": {"properties": {"served": {"const": true}}, "required": ["served"]},
+            "then": {
+              "properties": {
+                "path_id": {"minimum": 0},
+                "sru_allocations": {"minItems": 1}
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

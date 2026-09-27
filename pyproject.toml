@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-feedback-sidelink"
+version = "0.1.0"
+description = "Adaptive Feedback-LLM for joint routing and radio resource allocation"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Adaptive Feedback-LLM contributors"}]
+dependencies = ["httpx>=0.27,<1", "networkx>=3.2,<4", "numpy>=1.26,<3", "pydantic>=2.7,<3", "PyYAML>=6,<7"]
+
+[project.optional-dependencies]
+rl = ["torch>=2.6,<3"]
+dev = ["pytest>=8.2,<9", "build>=1,<2", "wheel"]
+
+[project.scripts]
+sidelink = "adaptive_feedback_llm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"adaptive_feedback_llm.prompts" = ["*.txt", "*.json"]
+
+[tool.pytest.ini_options]
+addopts = "-ra -m 'not real_llm'"
+testpaths = ["tests"]
+markers = ["real_llm: excluded from the public offline test suite"]

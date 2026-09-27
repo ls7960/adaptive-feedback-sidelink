@@ -1,0 +1,88 @@
+# Only the the paper profile is distributed. No credentials belong here.
+# GA component values are [population size, generations], in stable selection order.
+# Scenario-specific physics and tolerance come from each supplied scenario JSON.
+# This file records and validates the paper profile; CLI defaults are checked against it.
+schema_version: '1.0'
+metadata:
+  profile_name: paper
+  intended_use: formal_benchmark
+  formal_benchmark_ready: true
+numerics:
+  float_tolerance: 1.0e-09
+physics:
+  sru_bandwidth_hz: 180000.0
+  operating_sinr_db: 0.0
+  reliability_slope_per_db: 0.5994738181995927
+  implementation_efficiency: 1.0
+paths:
+  candidate_count: 5
+objective:
+  delay_margin_weight: 1.0
+  reliability_margin_weight: 1.0
+guidance:
+  hotspot_edge_load: catalog_occurrences_divided_by_capacity
+  hotspot_path_aggregation: unweighted_sum
+  ranking_key: infeasible,total_srus,hotspot_burden,negative_class_quality,hops,nodes
+heuristics:
+  flow_order: negative_priority_then_flow_id
+  initial_srus_per_hop: 1
+  increment_srus: 1
+  bottleneck_tie_break: path_edge_order
+  rejected_path_backtracking: false
+  evaluator_repair: false
+llm:
+  model: deepseek-v4-flash
+  temperature: 0.3
+  completion_token_limit: 32768
+  calls_per_round: 3
+  max_rounds: 20
+  early_stopping_patience_rounds: 3
+  request_timeout_s: 240.0
+  max_transport_attempts: 1
+  thinking_mode: enabled
+  reasoning_effort: low
+  prompt_version: '1.0'
+genetic_algorithm:
+  components:
+    balanced:
+    - 256
+    - 150
+    deep-search:
+    - 512
+    - 450
+    wide-search:
+    - 768
+    - 150
+  population_evaluations_per_scenario: 5760000
+  independent_restarts: 15
+  tournament_size: 3
+  elites: 16
+  crossover_probability: 0.9
+  random_immigrant_fraction: 0.1
+  heuristic_perturbation_max_fraction: 0.1
+  capacity_aware_initialization_fraction: 0.3
+  flow_mutation_probability_floor: 0.05
+  mutation_served_toggle_probability: 0.2
+  mutation_path_change_probability: 0.35
+  mutation_sru_change_probability: 0.45
+  mutation_sru_subaction_rule: equal_thirds_increment_decrement_uniform_resample
+  heuristic_perturbation_count_rounding: floor
+  capacity_aware_count_rounding: round_half_up
+  random_immigrant_count_rounding: round_half_up
+  force_at_least_one_mutated_gene: true
+  formal_early_stopping: false
+rl:
+  hidden: 128
+  epochs: 4
+  batch_size: 32
+  learning_rate: 0.0003
+  rollout_steps: 512
+  validation_interval: 5000
+  environment_steps_per_seed: 200000
+  seeds_per_baseline: 5
+  cpu_threads_per_seed: 2
+study:
+  scenarios: 120
+  scenarios_per_difficulty: 40
+  llm_repeats: 3
+  local_work_denominator: 1876511.5097109186

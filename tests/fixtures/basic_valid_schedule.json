@@ -1,0 +1,21 @@
+{
+  "flows": [
+    {
+      "flow_id": 0,
+      "served": true,
+      "path_id": 0,
+      "sru_allocations": [
+        {"src": 0, "dst": 2, "num_srus": 2}
+      ]
+    },
+    {
+      "flow_id": 1,
+      "served": true,
+      "path_id": 1,
+      "sru_allocations": [
+        {"src": 0, "dst": 1, "num_srus": 1},
+        {"src": 1, "dst": 2, "num_srus": 1}
+      ]
+    }
+  ]
+}

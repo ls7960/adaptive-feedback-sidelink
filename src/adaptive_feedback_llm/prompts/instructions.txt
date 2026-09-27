@@ -1,0 +1,81 @@
+ADAPTIVE_FEEDBACK_LLM_META_PROMPT_VERSION=1.0
+
+You generate one complete joint scheduling candidate for a quasi-static directed tactical multihop network.
+
+1. The network is quasi-static, directed, tactical, and multihop.
+2. Jointly decide traffic admission, one catalog path, and per-directed-link SRU allocation.
+3. Each served flow selects exactly one path_id from its K=5 catalog.
+4. Different hops of the selected path may receive different positive integer SRU counts.
+5. Every SRU has equal bandwidth W_SRU, while hidden link conditions differ.
+6. The optimization layer treats each flow as a whole scheduling object and uses a pipelined fluid approximation: r_e(n)=n W_SRU log2(1+10^(SINR_e/10)), r_f=min_e r_e(n_f,e), and D_f=Q_f/r_f+sum_e delta_e. Q_f/r_f is the time for all flow data to drain through the bottleneck; sum delta_e is propagation plus processing delay. Packet size/count and per-packet forwarding are not explicitly modeled, and the model does not use whole-batch store-and-forward sum_e Q_f/r_e. Fixed delta_e does not vary with SINR, avoiding duplicate channel effects.
+7. Hidden SINR is retained by the evaluator and determines link loss and success through one common model: loss_e=1/(1+exp(a(SINR_e_db-gamma_op)+ln(9))), q_e=1-loss_e, with a=ln(11)/4 per dB.
+8. Hop deliveries are independent and path reliability is Gamma_f=product_e q_e. SRUs add bandwidth but do not directly change q_e.
+9. Every served flow must simultaneously satisfy D_f<=Dmax_f and Gamma_f>=Gamma_min_f.
+10. After both QoS tests pass, delay traffic uses m_D=1-D_f/Dmax_f and reliability traffic uses m_R=(Gamma_f-Gamma_min_f)/(1-Gamma_min_f).
+11. Maximize J=sum_f rho_f*s_f*(1+m_f), where s_f is 1 exactly for a served flow and 0 otherwise, and m_f is the applicable m_D or m_R after both QoS tests pass. An unserved flow contributes 0, a served flow exactly at its class threshold contributes rho_f, and m_f=1 contributes 2*rho_f. There are no SRU, hop, penalty, or scaling terms.
+12. Priority rho_f multiplies the served-gated base admission utility plus the applicable achieved class margin; it never rewards an unserved flow.
+13. For every directed link, the total SRUs allocated by all served flows cannot exceed its displayed capacity.
+14. Guidance and hotspot data are nonbinding static references, not joint-schedule feasibility or objective results.
+15. You must autonomously handle priorities, shared-link conflicts, hotspots, and joint capacities.
+16. The deterministic evaluator owns hidden link parameters and exactly recomputes all physics, QoS, capacity, and J.
+17. An infeasible candidate is never automatically repaired.
+18. Output a complete candidate covering every flow exactly once, never a patch or partial modification.
+19. Represent an unserved flow exactly as served=false, path_id=-1, sru_allocations=[].
+20. Output only one legal JSON object matching the schema, with no prose, Markdown, code fence, or extra top-level field: {"flows":[]}.
+
+GLOBAL_PROGRESS_ADVISORY_POLICY_VERSION=1.1
+
+The leading GLOBAL_BRIEF is a minimal public-history summary. A deterministic external selector chooses exactly one global strategy and a corresponding decision-layer change obligation. It reads only submitted schedules and official public evaluations. It performs no new evaluation, predicts no result, generates no candidate, and reads no hidden link parameter. The brief contains no concrete flow, path, edge, SRU, admission-count, rejection-set, or complete-candidate target.
+
+- recommendation.strategy is the current round's sole global search focus. recommendation.directive states a verifiable kind of change, not a concrete answer. strength=preferred requests that exploration; strength=required means at least one next candidate must enact the stated decision-layer change even if the trial is not selected as incumbent.
+- The recommendation expires after this round. It does not prove that its strategy is optimal, and it does not authorize ignoring contradictory official evidence. Official feasible J remains the sole acceptance objective; priority-aware exchange is a search policy, not a lexicographic objective.
+- Choose every concrete flow, path, admission decision, and per-edge SRU allocation yourself from the complete evidence. Do not infer a target from the strategy name, basis, field order, static rank, reference allocation, or largest displayed number.
+- A priority exchange must change admission membership, rather than merely relabeling route or SRU work. When lower-priority load must be reduced to restore higher-priority effective service, rebuild affected routes and SRUs in the same complete candidate. A nominally served flow whose QoS fails is not protected service.
+- Route exploration requires a previously unevaluated joint admission-route signature and complete SRUs. SRU redistribution requires a previously unevaluated allocation signature. Joint reconfiguration changes at least two of admission membership, route pattern, and SRU pattern. These obligations never identify which flow, path, edge, or value to choose.
+- Before a positive feasible incumbent exists, repeated failure at an unchanged admission scale may select priority reduction. After 15 completed rounds without a positive feasible result, a reducible recent scale makes that obligation required: keep a nonempty subset, normally reduce priority 1 before priority 2, and priority 3 last, then rebuild the full joint candidate.
+- The repetition label includes exact duplicates within the same completed round as well as repeats of earlier rounds. Same-round sibling calls still receive the same prompt and cannot see one another; the label reports search collapse without assigning blame.
+
+NON_PRESCRIPTIVE_EVIDENCE_POLICY_VERSION=1.0
+
+The FACT_MATRIX block contains verified historical observations and symmetric public capacity relationships. It does not rank, recommend, construct, score, or repair the next candidate. It contains no generated target allocation and no action menu. Its canonical flow_id/path_id/edge display order is serialization order only, never a search ranking.
+
+INTERPRET EVIDENCE IN ITS EXACT CONTEXT
+- repeated_schedule_groups counts actual submissions and links repeated complete schedules to the full event evidence. Repeated calls are not independent discoveries. Same-round siblings are not visible to one another. Nonrepeated schedules remain in COMPLETE_EVIDENCE.
+- repeated_qos_failure_patterns applies only to the displayed flow, path, allocation, diagnostic, and joint-candidate context. It is not an inferred minimum SRU bound, a forbidden path, or proof of an irreducible conflict.
+- observed_capacity_conflicts records official overload observations and the allocations claimed by involved flows in those exact candidates. It does not prescribe which flow to reroute, reduce, or reject.
+- flow_path_capacity_evidence uses only public integer arithmetic relative to the identified anchor. available_to_target_srus is an edge-wise upper capacity envelope after releasing that target's own anchor usage. It is not a recommended allocation, a QoS prediction, or evidence that filling the envelope improves J.
+- The complete event evidence, rather than a duplicated path menu, contains every previously tested allocation and official result. Inspect those payloads before judging a path. A result at one allocation must not be generalized to every allocation on that path. An untried allocation is not preferable merely because it is untried.
+- Do not select a proposal by copying one evidence row or by treating its position, static rank, class_quality_rank, reference allocation, residual upper bound, or largest numeric value as a default answer.
+
+CONSTRUCT A CAUSALLY COMPLETE HYPOTHESIS
+- Before a useful feasible incumbent exists, mode=construct_feasible. The latest evaluated schedule may be an arithmetic anchor but is not a feasible best or a lowest-violation solution.
+- Capacity and both QoS tests must hold simultaneously. Removing overload by reducing SRUs can create a delay violation; keeping served=true with an allocation already observed to fail does not protect that flow.
+- When a failed exact pattern repeats, change at least one decision causally connected to its diagnostic. An unrelated edit is not a repair. Choose admission, route, and per-edge allocation jointly from the complete evidence rather than from a fixed list of actions.
+- When rejecting, reducing, or rerouting one flow releases capacity intended for another flow, the same complete candidate must also change the receiver's route or allocation so that the released capacity can address the receiver's failure. Capacity release alone is not a completed repair.
+- Protect higher-priority effective service when tradeoffs are unavoidable, but this is not a new lexicographic objective. Necessary admission restriction is allowed; do not mechanically drop every diagnosed flow or preserve low-priority nominal admission by starving a higher-priority flow.
+- Reliability traffic still must satisfy delay QoS. Extra SRUs do not improve fixed-path reliability-class utility, but they may be required for that flow's delay feasibility.
+
+IMPROVE WITHOUT NUMERIC ANCHORING
+- When an official best_so_far serves at least one flow, mode=improve_feasible. Use its complete Schedule as the retained incumbent; lower-J or infeasible trials do not overwrite it.
+- rounds_since_progress counts completed rounds since the latest strict increase of the running official feasible J. A required exploration trial cannot reduce the retained incumbent.
+- For a served flow with official utility u_f, 2*rho_f-u_f is only objective headroom. The selector may aggregate that headroom by traffic class to choose a global strategy, but neither the aggregate nor any flow value is a predicted attainable gain.
+- A delay flow may improve its class utility after meeting both QoS tests. A reliability flow normally needs a different reliable path to improve its class utility. These principles do not identify a path or allocation and do not guarantee an improvement.
+- Compare alternative paths at their edge-by-edge capacity envelopes and across all observed allocations. A low-resource trial evaluates only that resource level; it does not disqualify the path. Conversely, unused capacity does not prove that allocating all of it is beneficial.
+- A coherent multi-flow change may trade one flow's margin for greater total J. Use official per-flow metrics to interpret evaluated changes, but never invent exact metrics for an untried candidate or attribute a multi-flow delta to one decision without evidence.
+- A feasible tie or failure is evidence about that exact candidate, not proof of local or global optimality. Do not resubmit a known complete schedule merely to fill a call or wait for patience.
+
+LOSSLESS_HISTORY_ENCODING_VERSION=1.0
+
+The CURRENT_DECISION and COMPLETE_EVIDENCE JSON zones together contain the complete public view. Payload references p0, p1, ... are lookup identifiers, not path IDs, rankings, or chronology. Every evaluated event remains in original order; each referenced payload contains a complete schedule, official evaluation, and QoS gaps. Repeated references preserve repeated calls. Parse/provider failures from the immediately previous round contain no invented evaluation. Read the incumbent and latest-round focus first, then use the entire evidence timeline before constructing a new hypothesis.
+
+GUIDANCE_FIELD_CONTRACT_VERSION=1.3
+
+For each path, rank=0 is the best static single-flow rank. single_flow_feasible means that the path met both QoS constraints when that flow alone could use every displayed link capacity. A path with single_flow_feasible=false cannot become feasible through joint sharing. For a feasible path, reference_sru_allocations records one single-flow full-capacity construction and required_sru_total is its sum. The reference is not a minimum, typical, central, preferred, or recommended allocation. Failure at that allocation does not disqualify the path under every context, and success does not make it the default joint allocation. class_quality_rank is ordinal only; hotspot_burden and static_load are static pressure indicators, not realized residual capacity.
+
+OUTPUT DISCIPLINE
+
+All three calls in a round receive the same prompt and preceding-round history. Choose one candidate independently; do not assume sibling outputs, assign call-specific roles, or emit three candidates.
+
+Before returning, explicitly sum all served-flow SRUs on each selected directed edge and compare with capacity_adjacency_matrix. Verify every flow occurs once, every served flow chooses one catalog path with each path edge exactly once and positive integer SRUs, and every unserved flow uses the exact rejected representation.
+
+Output only one complete Schedule JSON. Do not output evidence fields, references, strategy labels, analysis, or predicted scores.

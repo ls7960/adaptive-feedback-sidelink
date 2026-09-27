@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "basic-handcrafted-001",
+  "node_ids": [0, 1, 2],
+  "links": [
+    {
+      "src": 0,
+      "dst": 1,
+      "capacity_srus": 3,
+      "sinr_db": 10.0,
+      "fixed_delay_s": 0.01
+    },
+    {
+      "src": 0,
+      "dst": 2,
+      "capacity_srus": 2,
+      "sinr_db": 4.0,
+      "fixed_delay_s": 0.03
+    },
+    {
+      "src": 1,
+      "dst": 2,
+      "capacity_srus": 3,
+      "sinr_db": 10.0,
+      "fixed_delay_s": 0.01
+    },
+    {
+      "src": 2,
+      "dst": 0,
+      "capacity_srus": 1,
+      "sinr_db": 0.0,
+      "fixed_delay_s": 0.05
+    }
+  ],
+  "flows": [
+    {
+      "flow_id": 0,
+      "source": 0,
+      "target": 2,
+      "data_bits": 100000.0,
+      "priority": 2.0,
+      "traffic_class": "delay",
+      "deadline_s": 0.2,
+      "min_reliability": 0.95
+    },
+    {
+      "flow_id": 1,
+      "source": 0,
+      "target": 2,
+      "data_bits": 50000.0,
+      "priority": 3.0,
+      "traffic_class": "reliability",
+      "deadline_s": 0.3,
+      "min_reliability": 0.995
+    }
+  ],
+  "path_catalogs": [
+    {
+      "flow_id": 0,
+      "paths": [
+        {"flow_id": 0, "path_id": 0, "node_sequence": [0, 2]},
+        {"flow_id": 0, "path_id": 1, "node_sequence": [0, 1, 2]}
+      ]
+    },
+    {
+      "flow_id": 1,
+      "paths": [
+        {"flow_id": 1, "path_id": 0, "node_sequence": [0, 2]},
+        {"flow_id": 1, "path_id": 1, "node_sequence": [0, 1, 2]}
+      ]
+    }
+  ],
+  "physics": {
+    "sru_bandwidth_hz": 180000.0,
+    "operating_sinr_db": 0.0,
+    "reliability_slope_per_db": 0.5994738181995927,
+    "implementation_efficiency": 1.0
+  },
+  "numerics": {
+    "float_tolerance": 1e-09
+  }
+}
